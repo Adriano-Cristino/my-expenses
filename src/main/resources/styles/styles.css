@@ -1,0 +1,227 @@
+/* Variáveis de cores */
+.root {
+    /* Tema claro */
+    -fx-primary-color: #3498db;
+    -fx-primary-dark: #2980b9;
+    -fx-accent-color: #2ecc71;
+    -fx-background-light: #f5f5f5;
+    -fx-card-background-light: white;
+    -fx-text-color-light: #333333;
+    -fx-text-secondary-light: #666666;
+    -fx-border-color-light: #e0e0e0;
+
+    /* Tema escuro */
+    -fx-primary-color-dark: #2196f3;
+    -fx-primary-dark-dark: #1976d2;
+    -fx-accent-color-dark: #26a69a;
+    -fx-background-dark: #121212;
+    -fx-card-background-dark: #1e1e1e;
+    -fx-text-color-dark: #ffffff;
+    -fx-text-secondary-dark: #b3b3b3;
+    -fx-border-color-dark: #333333;
+}
+
+/* Tema claro (padrão) */
+.root {
+    -fx-background-color: -fx-background-light;
+    -fx-text-fill: -fx-text-color-light;
+    -fx-font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Tema escuro */
+.root.dark {
+    -fx-background-color: -fx-background-dark;
+}
+
+.root.dark .form-container {
+    -fx-background-color: -fx-card-background-dark;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);
+}
+
+.root.dark .text-field, .root.dark .password-field {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: -fx-text-color-dark;
+    -fx-prompt-text-fill: -fx-text-secondary-dark;
+    -fx-border-color: #404040;
+}
+
+.root.dark .text-field:focused, .root.dark .password-field:focused {
+    -fx-border-color: -fx-primary-color-dark;
+}
+
+.root.dark .label {
+    -fx-text-fill: -fx-text-color-dark;
+}
+
+.root.dark .error-label {
+    -fx-text-fill: #ff5252;
+}
+
+/* Container do formulário */
+.form-container {
+    -fx-background-color: -fx-card-background-light;
+    -fx-padding: 35px;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+    -fx-max-width: 400px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+    -fx-background-radius: 12px;
+}
+
+/* Título do formulário */
+.form-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Campos de texto */
+.text-field, .password-field {
+    -fx-pref-height: 40px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: -fx-border-color-light;
+    -fx-border-width: 1px;
+    -fx-padding: 8px 15px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: -fx-primary-color;
+    -fx-border-width: 2px;
+    -fx-background-insets: 0;
+}
+
+/* Botões */
+.button {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 24px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-min-width: 150px;
+}
+
+.button:hover {
+    -fx-background-color: -fx-primary-dark;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);
+}
+
+.root.dark .button {
+    -fx-background-color: -fx-primary-color-dark;
+}
+
+.root.dark .button:hover {
+    -fx-background-color: -fx-primary-dark-dark;
+}
+
+/* Links e botões secundários */
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-primary-color;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 8px;
+    -fx-font-size: 13px;
+}
+
+.link-button:hover {
+    -fx-text-fill: -fx-primary-dark;
+    -fx-underline: true;
+}
+
+.root.dark .link-button {
+    -fx-text-fill: -fx-primary-color-dark;
+}
+
+.root.dark .link-button:hover {
+    -fx-text-fill: -fx-primary-dark-dark;
+}
+
+/* Checkbox */
+.check-box {
+    -fx-text-fill: -fx-text-secondary-light;
+}
+
+.root.dark .check-box {
+    -fx-text-fill: -fx-text-secondary-dark;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: -fx-border-color-light;
+    -fx-border-radius: 4px;
+}
+
+.root.dark .check-box .box {
+    -fx-background-color: #2d2d2d;
+    -fx-border-color: -fx-border-color-dark;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:selected .box {
+    -fx-background-color: -fx-primary-color;
+    -fx-border-color: -fx-primary-color;
+}
+
+.root.dark .check-box:selected .box {
+    -fx-background-color: -fx-primary-color-dark;
+    -fx-border-color: -fx-primary-color-dark;
+}
+
+/* Toggle Button (Tema) */
+.toggle-button {
+    -fx-background-radius: 50%;
+    -fx-min-width: 35px;
+    -fx-min-height: 35px;
+    -fx-max-width: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-border-color-light;
+    -fx-border-radius: 50%;
+    -fx-padding: 5px;
+}
+
+.root.dark .toggle-button {
+    -fx-border-color: -fx-border-color-dark;
+}
+
+.toggle-button:selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-border-color: -fx-primary-color;
+}
+
+.root.dark .toggle-button:selected {
+    -fx-background-color: -fx-primary-color-dark;
+    -fx-border-color: -fx-primary-color-dark;
+}
+
+.toggle-button .ikonli-font-icon {
+    -fx-icon-color: -fx-text-color-light;
+}
+
+.root.dark .toggle-button .ikonli-font-icon {
+    -fx-icon-color: -fx-text-color-dark;
+}
+
+/* Mensagens de erro */
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 0 0 0;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    -fx-progress-color: white;
+}
+
+/* Containers de campos */
+.field-container {
+    -fx-spacing: 8;
+}

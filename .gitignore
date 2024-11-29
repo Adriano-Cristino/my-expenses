@@ -1,0 +1,40 @@
+# Arquivos compilados
+target/
+*.class
+
+# Arquivos de log
+*.log
+logs/
+
+# Banco de dados SQLite
+*.db
+*.db-journal
+
+# Arquivos de configuração IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de ambiente
+.env
+*.properties
+
+# Arquivos de backup
+*.bak
+*.backup
+*.swp
+
+# Arquivos Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Outros
+dependency-reduced-pom.xml

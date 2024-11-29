@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.time.LocalDate?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expenses.controller.ExpenseManagementController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+
+    <!-- Filtros -->
+    <TitledPane text="Filtros" expanded="false">
+        <VBox spacing="10">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Período:"/>
+                <DatePicker fx:id="startDatePicker" promptText="Data Inicial"/>
+                <Label text="até"/>
+                <DatePicker fx:id="endDatePicker" promptText="Data Final"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Categoria:"/>
+                <ComboBox fx:id="categoryFilter" promptText="Selecione uma categoria" HBox.hgrow="ALWAYS"/>
+                
+                <Label text="Valor:"/>
+                <TextField fx:id="minValueFilter" promptText="Mínimo" prefWidth="100"/>
+                <Label text="até"/>
+                <TextField fx:id="maxValueFilter" promptText="Máximo" prefWidth="100"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Limpar Filtros" onAction="#handleClearFilters"/>
+                <Button text="Aplicar Filtros" onAction="#handleApplyFilters" styleClass="button-primary"/>
+            </HBox>
+        </VBox>
+    </TitledPane>
+
+    <!-- Ações -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Nova Despesa" onAction="#handleNewExpense" styleClass="button-primary"/>
+    </HBox>
+
+    <!-- Tabela de Despesas -->
+    <TableView fx:id="expenseTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="dateColumn" text="Data" prefWidth="100"/>
+            <TableColumn fx:id="descriptionColumn" text="Descrição" prefWidth="200"/>
+            <TableColumn fx:id="categoryColumn" text="Categoria" prefWidth="150"/>
+            <TableColumn fx:id="valueColumn" text="Valor" prefWidth="100"/>
+            <TableColumn fx:id="actionsColumn" text="Ações" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Resumo -->
+    <HBox spacing="20" alignment="CENTER_RIGHT" styleClass="summary-box">
+        <Label text="Total do Período:"/>
+        <Label fx:id="totalLabel" styleClass="total-value"/>
+    </HBox>
+</VBox>

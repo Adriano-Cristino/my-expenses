@@ -1,0 +1,389 @@
+.main-container {
+    -fx-background-color: #f8f9fa;
+}
+
+.top-bar {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 2);
+    -fx-padding: 15 25;
+}
+
+.welcome-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.side-nav {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 2);
+    -fx-min-width: 260;
+    -fx-padding: 25 15;
+}
+
+.nav-button {
+    -fx-padding: 16 22;
+    -fx-background-radius: 12;
+    -fx-font-size: 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-graphic-text-gap: 18;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.nav-button:hover {
+    -fx-background-color: #f0f2f5;
+    -fx-translate-x: 3;
+}
+
+.nav-button:selected {
+    -fx-background-color: #e8f3ff;
+    -fx-translate-x: 3;
+}
+
+.nav-button .ikonli-font-icon {
+    -fx-icon-color: #3498db;
+}
+
+.nav-button:selected .ikonli-font-icon {
+    -fx-icon-color: #2980b9;
+}
+
+.nav-button .label {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: normal;
+}
+
+.nav-button:selected .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.logout-button {
+    -fx-padding: 10 18;
+    -fx-background-radius: 25;
+    -fx-background-color: transparent;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+    -fx-background-color: #fee2e2;
+}
+
+.logout-button:hover .ikonli-font-icon {
+    -fx-icon-color: #ef4444;
+}
+
+.logout-button .ikonli-font-icon {
+    -fx-icon-color: #64748b;
+}
+
+.content-area {
+    -fx-background-color: transparent;
+}
+
+/* Cards e elementos de conteúdo */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 15, 0, 0, 2);
+    -fx-padding: 20;
+}
+
+.card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 20, 0, 0, 4);
+}
+
+/* Dashboard */
+.dashboard-scroll {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.dashboard-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.dashboard-container {
+    -fx-background-color: transparent;
+}
+
+/* Controles e Filtros */
+.controls-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+.filter-combo, .filter-date {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12;
+}
+
+.export-button, .update-button {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+.export-button:hover, .update-button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.export-button .ikonli-font-icon, .update-button .ikonli-font-icon {
+    -fx-icon-color: #2c3e50;
+}
+
+/* Cards */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-spacing: 8;
+}
+
+.card-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+}
+
+.card-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.card-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #94a3b8;
+}
+
+/* Gráficos */
+.charts-tab-pane {
+    -fx-background-color: transparent;
+}
+
+.charts-tab-pane .tab-header-area {
+    -fx-padding: 0 0 10 0;
+}
+
+.charts-tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-padding: 8 16;
+}
+
+.charts-tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+}
+
+.chart-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+/* Calendário */
+.calendar-grid {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+    -fx-hgap: 8;
+    -fx-vgap: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+.calendar-day {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-alignment: TOP_RIGHT;
+    -fx-min-height: 100;
+}
+
+.calendar-day-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.calendar-month-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+    -fx-padding: 0 20;
+}
+
+.calendar-nav-button {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-padding: 8;
+}
+
+.calendar-nav-button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.calendar-nav-button .ikonli-font-icon {
+    -fx-icon-color: #2c3e50;
+}
+
+/* Tabela de Despesas */
+.recent-expenses-container {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 10 15;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #e9ecef;
+}
+
+.see-all-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3b82f6;
+    -fx-font-size: 14px;
+}
+
+.see-all-button:hover {
+    -fx-text-fill: #2563eb;
+}
+
+/* Tema Escuro */
+.theme-dark .main-container {
+    -fx-background-color: #0f172a;
+}
+
+.theme-dark .top-bar,
+.theme-dark .side-nav {
+    -fx-background-color: #1e293b;
+}
+
+.theme-dark .nav-button:hover {
+    -fx-background-color: #334155;
+}
+
+.theme-dark .nav-button:selected {
+    -fx-background-color: #1d4ed8;
+}
+
+.theme-dark .nav-button:selected .label {
+    -fx-text-fill: white;
+}
+
+.theme-dark .nav-button .label {
+    -fx-text-fill: #e2e8f0;
+}
+
+.theme-dark .nav-button .ikonli-font-icon {
+    -fx-icon-color: #60a5fa;
+}
+
+.theme-dark .nav-button:selected .ikonli-font-icon {
+    -fx-icon-color: white;
+}
+
+.theme-dark .logout-button:hover {
+    -fx-background-color: #451a1a;
+}
+
+.theme-dark .logout-button .ikonli-font-icon {
+    -fx-icon-color: #cbd5e1;
+}
+
+.theme-dark .welcome-label {
+    -fx-text-fill: #f1f5f9;
+}
+
+.theme-dark .card {
+    -fx-background-color: #1e293b;
+}
+
+.theme-dark .controls-container,
+.theme-dark .card,
+.theme-dark .chart-container,
+.theme-dark .calendar-grid,
+.theme-dark .recent-expenses-container {
+    -fx-background-color: #1e293b;
+}
+
+.theme-dark .filter-combo,
+.theme-dark .filter-date,
+.theme-dark .export-button,
+.theme-dark .update-button,
+.theme-dark .calendar-nav-button {
+    -fx-background-color: #334155;
+}
+
+.theme-dark .calendar-day {
+    -fx-background-color: #334155;
+}
+
+.theme-dark .card-title {
+    -fx-text-fill: #94a3b8;
+}
+
+.theme-dark .card-value {
+    -fx-text-fill: #f1f5f9;
+}
+
+.theme-dark .card-subtitle {
+    -fx-text-fill: #64748b;
+}
+
+.theme-dark .chart-title,
+.theme-dark .calendar-month-label,
+.theme-dark .calendar-day-header {
+    -fx-text-fill: #f1f5f9;
+}
+
+.theme-dark .table-view .column-header {
+    -fx-background-color: #334155;
+}
+
+.theme-dark .table-view .table-row-cell:hover {
+    -fx-background-color: #334155;
+}
+
+.theme-dark .table-view .table-row-cell:selected {
+    -fx-background-color: #475569;
+}
+
+.theme-dark .see-all-button {
+    -fx-text-fill: #60a5fa;
+}
+
+.theme-dark .see-all-button:hover {
+    -fx-text-fill: #3b82f6;
+}

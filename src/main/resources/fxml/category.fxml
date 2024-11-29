@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expenses.controller.CategoryController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="categoryNameField" promptText="Nome da Categoria" HBox.hgrow="ALWAYS"/>
+        <Button text="Adicionar" onAction="#handleAddCategory" styleClass="button-primary"/>
+    </HBox>
+
+    <TableView fx:id="categoryTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="nameColumn" text="Nome" prefWidth="200"/>
+            <TableColumn fx:id="actionsColumn" text="Ações" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

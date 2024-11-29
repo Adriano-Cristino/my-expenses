@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.expenses.controller.DashboardExportController"
+      styleClass="dashboard-section">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Exportar Despesas" styleClass="section-title"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <Label text="Período:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <JFXComboBox fx:id="exportPeriodComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        
+        <Label text="De:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <DatePicker fx:id="exportStartDate" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <Label text="Até:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <DatePicker fx:id="exportEndDate" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        
+        <Label text="Formato:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <JFXComboBox fx:id="exportFormatComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+    
+    <VBox spacing="10">
+        <Label text="Incluir no relatório:"/>
+        <HBox spacing="20">
+            <JFXCheckBox fx:id="includeChartsCheckbox" text="Gráficos" selected="true"/>
+            <JFXCheckBox fx:id="includeSummaryCheckbox" text="Resumo" selected="true"/>
+            <JFXCheckBox fx:id="includeDetailsCheckbox" text="Detalhes" selected="true"/>
+        </HBox>
+    </VBox>
+    
+    <HBox alignment="CENTER_RIGHT">
+        <JFXButton fx:id="exportButton" text="Exportar" buttonType="RAISED" styleClass="btn-primary"/>
+    </HBox>
+    
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <Label text="Exportações Recentes"/>
+        <TableView fx:id="recentExportsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn text="Data" prefWidth="100"/>
+                <TableColumn text="Tipo" prefWidth="100"/>
+                <TableColumn text="Período" prefWidth="200"/>
+                <TableColumn text="Arquivo" prefWidth="300"/>
+            </columns>
+        </TableView>
+    </VBox>
+    
+</VBox>

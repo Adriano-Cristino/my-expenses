@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.expenses.controller.DashboardSummaryController">
+    <!-- Filtros e Controles -->
+    <HBox spacing="20" alignment="CENTER_LEFT" styleClass="controls-container">
+        <JFXComboBox fx:id="periodComboBox" promptText="Período" styleClass="filter-combo"/>
+        <DatePicker fx:id="startDatePicker" promptText="Data Inicial" styleClass="filter-date"/>
+        <DatePicker fx:id="endDatePicker" promptText="Data Final" styleClass="filter-date"/>
+    </HBox>
+
+    <!-- Cards de Resumo -->
+    <GridPane styleClass="summary-grid" hgap="20" vgap="20">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+        </columnConstraints>
+
+        <VBox styleClass="card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label text="Total do Período" styleClass="card-title"/>
+            <Label fx:id="totalPeriodLabel" styleClass="card-value"/>
+            <Label fx:id="periodComparisonLabel" styleClass="card-subtitle"/>
+        </VBox>
+
+        <VBox styleClass="card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label text="Média Mensal" styleClass="card-title"/>
+            <Label fx:id="monthlyAverageLabel" styleClass="card-value"/>
+            <Label fx:id="monthlyTrendLabel" styleClass="card-subtitle"/>
+        </VBox>
+
+        <VBox styleClass="card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label text="Maior Despesa" styleClass="card-title"/>
+            <Label fx:id="highestExpenseLabel" styleClass="card-value"/>
+            <Label fx:id="highestExpenseCategoryLabel" styleClass="card-subtitle"/>
+        </VBox>
+
+        <VBox styleClass="card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <Label text="Economia" styleClass="card-title"/>
+            <Label fx:id="savingsLabel" styleClass="card-value"/>
+            <Label fx:id="savingsPercentLabel" styleClass="card-subtitle"/>
+        </VBox>
+    </GridPane>
+
+    <!-- Gráficos -->
+    <TabPane styleClass="charts-tab-pane">
+        <Tab text="Visão Geral" closable="false">
+            <HBox spacing="20">
+                <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="chart-container">
+                    <Label text="Distribuição por Categoria" styleClass="chart-title"/>
+                    <PieChart fx:id="expensesPieChart" VBox.vgrow="ALWAYS"/>
+                </VBox>
+                <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="chart-container">
+                    <Label text="Evolução Mensal" styleClass="chart-title"/>
+                    <BarChart fx:id="monthlyTrendsChart" VBox.vgrow="ALWAYS">
+                        <xAxis>
+                            <CategoryAxis label="Mês"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Valor (R$)"/>
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+            </HBox>
+        </Tab>
+        <Tab text="Detalhamento" closable="false">
+            <VBox spacing="20">
+                <HBox spacing="20">
+                    <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="chart-container">
+                        <Label text="Gastos por Dia" styleClass="chart-title"/>
+                        <LineChart fx:id="dailyExpensesChart" VBox.vgrow="ALWAYS">
+                            <xAxis>
+                                <CategoryAxis label="Dia"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Valor (R$)"/>
+                            </yAxis>
+                        </LineChart>
+                    </VBox>
+                    <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="chart-container">
+                        <Label text="Comparativo Mensal" styleClass="chart-title"/>
+                        <StackedBarChart fx:id="categoryComparisonChart" VBox.vgrow="ALWAYS">
+                            <xAxis>
+                                <CategoryAxis label="Categoria"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Valor (R$)"/>
+                            </yAxis>
+                        </StackedBarChart>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

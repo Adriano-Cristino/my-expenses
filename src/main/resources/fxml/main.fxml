@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import com.jfoenix.controls.*?>
+
+<BorderPane fx:id="mainContainer" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.expenses.controller.MainController" styleClass="main-container">
+            
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="25" styleClass="top-bar">
+            <padding>
+                <Insets top="18" right="25" bottom="18" left="25"/>
+            </padding>
+            
+            <Label fx:id="welcomeLabel" styleClass="welcome-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <JFXButton onAction="#logout" styleClass="logout-button">
+                <graphic>
+                    <FontIcon iconLiteral="fas-sign-out-alt" iconSize="18"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Sair" styleClass="custom-tooltip"/>
+                </tooltip>
+            </JFXButton>
+        </HBox>
+    </top>
+    
+    <left>
+        <VBox spacing="12" styleClass="side-nav">
+            <padding>
+                <Insets top="25" right="15" bottom="25" left="15"/>
+            </padding>
+            
+            <JFXButton onAction="#navigateToDashboard" styleClass="nav-button">
+                <graphic>
+                    <FontIcon iconLiteral="fas-chart-line" iconSize="22"/>
+                </graphic>
+                <Label text="Dashboard"/>
+            </JFXButton>
+            
+            <JFXButton onAction="#navigateToExpenses" styleClass="nav-button">
+                <graphic>
+                    <FontIcon iconLiteral="fas-money-bill-wave" iconSize="22"/>
+                </graphic>
+                <Label text="Despesas"/>
+            </JFXButton>
+            
+            <JFXButton onAction="#navigateToCategories" styleClass="nav-button">
+                <graphic>
+                    <FontIcon iconLiteral="fas-tags" iconSize="22"/>
+                </graphic>
+                <Label text="Categorias"/>
+            </JFXButton>
+            
+            <Region VBox.vgrow="ALWAYS"/>
+            
+            <JFXButton onAction="#navigateToProfile" styleClass="nav-button">
+                <graphic>
+                    <FontIcon iconLiteral="fas-user" iconSize="22"/>
+                </graphic>
+                <Label text="Perfil"/>
+            </JFXButton>
+        </VBox>
+    </left>
+    
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area">
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
+        </StackPane>
+    </center>
+    
+</BorderPane>

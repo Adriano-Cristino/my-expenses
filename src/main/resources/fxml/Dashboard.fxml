@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane fitToWidth="true" xmlns:fx="http://javafx.com/fxml" fx:controller="com.expenses.controller.DashboardController">
+    <VBox spacing="20">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Seção de Resumo -->
+        <fx:include fx:id="summary" source="dashboard/summary.fxml"/>
+
+        <HBox spacing="20" VBox.vgrow="ALWAYS">
+            <!-- Seção do Calendário -->
+            <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="calendar-section">
+                <fx:include fx:id="calendar" source="dashboard/calendar.fxml"/>
+            </VBox>
+
+            <!-- Seção de Exportação -->
+            <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="export-section">
+                <fx:include fx:id="export" source="dashboard/export.fxml"/>
+            </VBox>
+        </HBox>
+
+        <!-- Tabela de Despesas Recentes -->
+        <VBox spacing="10">
+            <Label text="Despesas Recentes" styleClass="section-title"/>
+            <TableView fx:id="recentExpensesTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="dateColumn" text="Data"/>
+                    <TableColumn fx:id="descriptionColumn" text="Descrição"/>
+                    <TableColumn fx:id="categoryColumn" text="Categoria"/>
+                    <TableColumn fx:id="valueColumn" text="Valor"/>
+                    <TableColumn fx:id="actionsColumn" text="Ações"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </VBox>
+</ScrollPane>

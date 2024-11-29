@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.expenses.controller.AdminController"
+            stylesheets="@../css/styles.css">
+            
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="header">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label fx:id="welcomeLabel" styleClass="welcome-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Voltar" onAction="#handleBack" styleClass="back-button"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <TabPane>
+            <Tab text="Usuários" closable="false">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    
+                    <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="nameColumn" text="Nome"/>
+                            <TableColumn fx:id="emailColumn" text="Email"/>
+                            <TableColumn fx:id="roleColumn" text="Papel"/>
+                            <TableColumn fx:id="actionsColumn" text="Ações"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            
+            <Tab text="Relatórios" closable="false">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <DatePicker fx:id="startDatePicker" promptText="Data Inicial"/>
+                        <DatePicker fx:id="endDatePicker" promptText="Data Final"/>
+                        <Button text="Gerar Relatório" onAction="#handleGenerateReport" styleClass="primary-button"/>
+                    </HBox>
+                    
+                    <TableView fx:id="reportTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="userNameColumn" text="Usuário"/>
+                            <TableColumn fx:id="totalExpensesColumn" text="Total de Despesas"/>
+                            <TableColumn fx:id="categoryCountColumn" text="Categorias"/>
+                            <TableColumn fx:id="expenseCountColumn" text="Despesas"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    
+</BorderPane>

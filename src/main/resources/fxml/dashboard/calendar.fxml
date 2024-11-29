@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.expenses.controller.DashboardCalendarController">
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <JFXButton fx:id="previousMonthButton" styleClass="calendar-nav-button">
+            <graphic>
+                <FontIcon iconLiteral="fas-chevron-left"/>
+            </graphic>
+        </JFXButton>
+        <Label fx:id="currentMonthLabel" styleClass="calendar-month-label"/>
+        <JFXButton fx:id="nextMonthButton" styleClass="calendar-nav-button">
+            <graphic>
+                <FontIcon iconLiteral="fas-chevron-right"/>
+            </graphic>
+        </JFXButton>
+    </HBox>
+    <GridPane fx:id="calendarGrid" styleClass="calendar-grid" VBox.vgrow="ALWAYS">
+        <!-- Os dias da semana e células do calendário serão adicionados dinamicamente -->
+    </GridPane>
+</VBox>

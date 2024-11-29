@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.expenses.controller.RegisterController"
+           stylesheets="@../styles/styles.css">
+           
+    <VBox styleClass="form-container" alignment="CENTER">
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <ToggleButton fx:id="themeToggle" mnemonicParsing="false" onAction="#toggleTheme">
+                <graphic>
+                    <FontIcon fx:id="themeIcon" iconLiteral="fas-moon" iconSize="16"/>
+                </graphic>
+            </ToggleButton>
+        </HBox>
+        
+        <Label text="Criar Conta" styleClass="form-title"/>
+        
+        <VBox spacing="5">
+            <Label text="Nome"/>
+            <TextField fx:id="nameField" promptText="Digite seu nome"/>
+            <Label fx:id="nameError" styleClass="error-label" managed="false" visible="false"/>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label text="Email"/>
+            <TextField fx:id="emailField" promptText="Digite seu email"/>
+            <Label fx:id="emailError" styleClass="error-label" managed="false" visible="false"/>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label text="Senha"/>
+            <PasswordField fx:id="passwordField" promptText="Digite sua senha"/>
+            <Label fx:id="passwordError" styleClass="error-label" managed="false" visible="false"/>
+            <Label text="A senha deve ter pelo menos 8 caracteres" styleClass="error-label"/>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label text="Confirmar Senha"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirme sua senha"/>
+            <Label fx:id="confirmPasswordError" styleClass="error-label" managed="false" visible="false"/>
+        </VBox>
+        
+        <Button fx:id="registerButton" text="Criar Conta" styleClass="button" onAction="#handleRegister" defaultButton="true">
+            <graphic>
+                <ProgressIndicator fx:id="registerProgress" styleClass="loading-indicator" visible="false" prefHeight="20" prefWidth="20"/>
+            </graphic>
+        </Button>
+        
+        <Button text="Já tem uma conta? Entre aqui" styleClass="link-button" onAction="#handleLoginClick"/>
+        
+        <Label fx:id="errorMessage" styleClass="error-label" managed="false" visible="false" wrapText="true"/>
+    </VBox>
+    
+</StackPane>
